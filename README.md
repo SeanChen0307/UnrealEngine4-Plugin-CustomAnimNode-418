@@ -18,6 +18,8 @@ https://youtu.be/K2rimMNwifw
 
 https://youtu.be/IKL-aNbwq7w
 
+Tutorial: https://www.youtube.com/watch?v=eChjuATgZIU
+
 Caution:
 To make those node work, your character's skeleton must have IK foot setup.
 
