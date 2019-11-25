@@ -1,5 +1,5 @@
-# UnrealEngine4-Plugin-CustomAnimNode-418
-Plugin for UnrealEngine4.18
+# UnrealEngine4-Plugin-CustomAnimNode
+Plugin for UnrealEngine 4.23 (updated from upstream 4.18 to be 4.23 compatible)
 specification:
 
 1.Download the corresponding version of plugin package.
