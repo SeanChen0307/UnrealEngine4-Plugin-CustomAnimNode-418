@@ -1,5 +1,5 @@
 # UnrealEngine4-Plugin-CustomAnimNode
-Plugin for UnrealEngine 4.23 (updated from upstream 4.18 to be 4.23 compatible)
+Plugin for UnrealEngine 4.24 (updated from upstream 4.18 to be 4.24 compatible)
 specification:
 
 1. Copy these files into `[your project folder]/Plugins/CustomAnimNode`
