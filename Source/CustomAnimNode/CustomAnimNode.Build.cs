@@ -10,6 +10,7 @@ public class CustomAnimNode : ModuleRules
 
         PublicIncludePaths.AddRange(
             new string[] {
+                // "CustomAnimNode/Public"
 				// ... add public include paths required here ...
 			}
             );
@@ -17,6 +18,7 @@ public class CustomAnimNode : ModuleRules
 
         PrivateIncludePaths.AddRange(
             new string[] {
+                // "CustomAnimNode/Private",
 				// ... add other private include paths required here ...
 			}
             );

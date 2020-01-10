@@ -10,6 +10,7 @@ void FCustomAnimNodeModule::StartupModule()
 
 #if    WITH_EDITOR
 	FModuleManager::Get().LoadModule(TEXT("BlueprintGraph"));
+	// FModuleManager::Get().LoadModule(TEXT("AnimGraph"));
 	FModuleManager::Get().LoadModule(TEXT("CustomAnimNodeEditor"));
 #endif
 

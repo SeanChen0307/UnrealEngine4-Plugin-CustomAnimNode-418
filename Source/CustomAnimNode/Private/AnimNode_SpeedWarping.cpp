@@ -59,7 +59,7 @@ void FAnimNode_SpeedWarping::EvaluateSkeletalControl_AnyThread(FComponentSpacePo
 	TArray<FVector> TSpringForce;
 	TArray<FIKFootLocation> TIKFootLocations;
 
-	if (!FeetDefinitions.Num() == 0)
+	if (FeetDefinitions.Num() != 0)
 	{
 		//Calculate each foot's real position.
 		for (FIKBones & Each : FeetDefinitions)
@@ -190,6 +190,8 @@ void FAnimNode_SpeedWarping::EvaluateSkeletalControl_AnyThread(FComponentSpacePo
 			if (PelvisAdjustmentInterp.Dampen > CutOffDampingValue)
 			{
 				float const SafetyScale = CutOffDampingValue / PelvisAdjustmentInterp.Dampen;
+				check(FMath::IsFinite(PelvisAdjustmentInterp.Dampen));
+				check(FMath::IsFinite(CutOffDampingValue));
 				BoneVelocity += SafetyScale * (Acceleration * TimeStep);
 			}
 			else
@@ -204,6 +206,13 @@ void FAnimNode_SpeedWarping::EvaluateSkeletalControl_AnyThread(FComponentSpacePo
 
 			// Update velocity to reflect post processing done to bone location.
 			BoneVelocity = (BoneLocation - OldBoneLocation) / TimeStep;
+
+			check(TimeStep != 0.f);
+			check(FMath::IsFinite(TimeStep));
+			check(FMath::IsFinite(RemainingTime));
+			check(FMath::IsFinite(RemainingTime));
+			check(!DeltaMove.ContainsNaN());
+			check(!Acceleration.ContainsNaN());
 
 			check(!BoneLocation.ContainsNaN());
 			check(!BoneVelocity.ContainsNaN());
@@ -243,13 +252,10 @@ void FAnimNode_SpeedWarping::InitializeBoneReferences(const FBoneContainer & Req
 {
 	IkFootRootBone.Initialize(RequiredBones);
 	PelvisBone.Initialize(RequiredBones);
-	if (!FeetDefinitions.Num() == 0)
+	for (FIKBones &FeetDefinition : FeetDefinitions)
 	{
-		for (FIKBones & Each : FeetDefinitions)
-		{
-			Each.IKFootBone.Initialize(RequiredBones);
-			Each.FKFootBone.Initialize(RequiredBones);
-		}
+		FeetDefinition.IKFootBone.Initialize(RequiredBones);
+		FeetDefinition.FKFootBone.Initialize(RequiredBones);
 	}
 }
 
