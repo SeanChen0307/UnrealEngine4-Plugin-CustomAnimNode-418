@@ -1,14 +1,10 @@
-# UnrealEngine4-Plugin-CustomAnimNode-418
-Plugin for UnrealEngine4.18
+# UnrealEngine4-Plugin-CustomAnimNode
+Plugin for UnrealEngine 4.24 (updated from upstream 4.18 to be 4.24 compatible)
 specification:
 
-1.Download the corresponding version of plugin package.
-
-2.Copy the "CustomAnimNode" folder and paste it into the "Plugins" folder of which project you want to use this plugin.
-
-3.Open the project and enable the plugin named "CustomAnimNode".
-
-4.Now you can create "Orientation Warping" and "Speed Warping" node inside the AnimGraph of Animation Blueprint.
+1. Copy these files into `[your project folder]/Plugins/CustomAnimNode`
+2. Open the project and enable the plugin named "CustomAnimNode".
+3. Now you can create "Orientation Warping" and "Speed Warping" node inside the AnimGraph of Animation Blueprint.
 
 Demo:
 

@@ -1,0 +1,1 @@
+"E:\UE\UE_4.24\Engine\Build\BatchFiles\RunUAT.bat" BuildPlugin -Plugin="E:\code\UnrealEngine4-Plugin-CustomAnimNode\CustomAnimNode.uplugin" -Package="E:\code\built"
